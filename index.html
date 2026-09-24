@@ -443,68 +443,73 @@ const persona =
 
 
 
-const persona =
-    trabajadores[personaSolicitada];
+/* =====================================================
+   SI LA PERSONA EXISTE, CARGAMOS SUS DATOS
+   ===================================================== */
 
 
-// PERFIL
-
-document.getElementById("profilePhoto").src =
-    "images/" + persona.foto;
-
-document.getElementById("profilePhoto").alt =
-    persona.nombre;
-
-document.getElementById("profileName").textContent =
-    persona.nombre;
-
-document.getElementById("profileRole").textContent =
-    persona.cargo;
+if (persona) {
 
 
-// TELÉFONO MÓVIL
-
-document.getElementById("phoneValue").textContent =
-    persona.telefono;
-
-document.getElementById("phoneLink").href =
-    "tel:" + persona.telefono;
+    document.title =
+        persona.nombre + " | AMANAOIL";
 
 
-// TELÉFONO FIJO
-
-document.getElementById("phoneFixedValue").textContent =
-    persona.telefonoFijo;
-
-document.getElementById("phoneFixedLink").href =
-    "tel:" + persona.telefonoFijo;
+    document.getElementById("profileName").textContent =
+        persona.nombre;
 
 
-// EMAIL
-
-document.getElementById("emailValue").textContent =
-    persona.email;
-
-document.getElementById("emailLink").href =
-    "mailto:" + persona.email;
+    document.getElementById("profileRole").textContent =
+        persona.cargo;
 
 
-// UBICACIÓN
-
-document.getElementById("locationValue").textContent =
-    persona.ubicacion;
-
-document.getElementById("locationLink").href =
-    persona.mapa;
+    document.getElementById("phoneValue").textContent =
+        persona.telefono;
 
 
-// SITIO WEB
+    document.getElementById("phoneLink").href =
+        "tel:" + persona.telefono;
 
-document.getElementById("websiteValue").textContent =
-    persona.web;
 
-document.getElementById("websiteLink").href =
-    persona.web;
+    document.getElementById("emailValue").textContent =
+        persona.email;
+
+
+    document.getElementById("emailLink").href =
+        "mailto:" + persona.email;
+
+
+    document.getElementById("locationValue").textContent =
+        persona.ubicacion;
+
+
+    document.getElementById("locationLink").href =
+        persona.mapa;
+
+
+    document.getElementById("websiteValue").textContent =
+        persona.web.replace("https://", "");
+
+
+    document.getElementById("websiteLink").href =
+        persona.web;
+
+
+    const foto =
+        document.getElementById("profilePhoto");
+
+
+    foto.src =
+        "images/" + persona.foto;
+
+
+    foto.alt =
+        persona.nombre;
+
+
+}
+
+
 
 /* =====================================================
    GUARDAR CONTACTO

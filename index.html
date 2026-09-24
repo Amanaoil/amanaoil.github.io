@@ -447,65 +447,63 @@ const persona =
     trabajadores[personaSolicitada];
 
 
-// PERFIL
+const foto = document.getElementById("profilePhoto");
+const nombre = document.getElementById("profileName");
+const cargo = document.getElementById("profileRole");
 
-document.getElementById("profilePhoto").src =
-    "images/" + persona.foto;
+const phoneValue = document.getElementById("phoneValue");
+const phoneLink = document.getElementById("phoneLink");
 
-document.getElementById("profilePhoto").alt =
-    persona.nombre;
+const phoneFixedValue = document.getElementById("phoneFixedValue");
+const phoneFixedLink = document.getElementById("phoneFixedLink");
 
-document.getElementById("profileName").textContent =
-    persona.nombre;
+const emailValue = document.getElementById("emailValue");
+const emailLink = document.getElementById("emailLink");
 
-document.getElementById("profileRole").textContent =
-    persona.cargo;
+const locationValue = document.getElementById("locationValue");
+const locationLink = document.getElementById("locationLink");
 
-
-// TELÉFONO MÓVIL
-
-document.getElementById("phoneValue").textContent =
-    persona.telefono;
-
-document.getElementById("phoneLink").href =
-    "tel:" + persona.telefono;
+const websiteValue = document.getElementById("websiteValue");
+const websiteLink = document.getElementById("websiteLink");
 
 
-// TELÉFONO FIJO
+/* PERFIL */
 
-document.getElementById("phoneFixedValue").textContent =
-    persona.telefonoFijo;
+foto.src = "images/amanalogo.jpg";
+foto.alt = persona.nombre;
 
-document.getElementById("phoneFixedLink").href =
-    "tel:" + persona.telefonoFijo;
-
-
-// EMAIL
-
-document.getElementById("emailValue").textContent =
-    persona.email;
-
-document.getElementById("emailLink").href =
-    "mailto:" + persona.email;
+nombre.textContent = persona.nombre;
+cargo.textContent = persona.cargo;
 
 
-// UBICACIÓN
+/* TELÉFONO MÓVIL */
 
-document.getElementById("locationValue").textContent =
-    persona.ubicacion;
-
-document.getElementById("locationLink").href =
-    persona.mapa;
+phoneValue.textContent = persona.telefono;
+phoneLink.href = "tel:" + persona.telefono;
 
 
-// SITIO WEB
+/* TELÉFONO FIJO */
 
-document.getElementById("websiteValue").textContent =
-    persona.web;
+phoneFixedValue.textContent = persona.telefonoFijo;
+phoneFixedLink.href = "tel:" + persona.telefonoFijo;
 
-document.getElementById("websiteLink").href =
-    persona.web;
 
+/* EMAIL */
+
+emailValue.textContent = persona.email;
+emailLink.href = "mailto:" + persona.email;
+
+
+/* UBICACIÓN */
+
+locationValue.textContent = persona.ubicacion;
+locationLink.href = persona.mapa;
+
+
+/* SITIO WEB */
+
+websiteValue.textContent = persona.web;
+websiteLink.href = persona.web;
 /* =====================================================
    GUARDAR CONTACTO
    ===================================================== */

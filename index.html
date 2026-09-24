@@ -443,63 +443,128 @@ const persona =
 
 
 
-const foto = document.getElementById("profilePhoto");
-const nombre = document.getElementById("profileName");
-const cargo = document.getElementById("profileRole");
-
-const phoneValue = document.getElementById("phoneValue");
-const phoneLink = document.getElementById("phoneLink");
-
-const phoneFixedValue = document.getElementById("phoneFixedValue");
-const phoneFixedLink = document.getElementById("phoneFixedLink");
-
-const emailValue = document.getElementById("emailValue");
-const emailLink = document.getElementById("emailLink");
-
-const locationValue = document.getElementById("locationValue");
-const locationLink = document.getElementById("locationLink");
-
-const websiteValue = document.getElementById("websiteValue");
-const websiteLink = document.getElementById("websiteLink");
+const persona =
+    trabajadores[personaSolicitada];
 
 
 // PERFIL
 
-foto.src = "images/amanalogo.jpg";
-foto.alt = persona.nombre;
+document.getElementById("profilePhoto").src =
+    "images/" + persona.foto;
 
-nombre.textContent = persona.nombre;
-cargo.textContent = persona.cargo;
+document.getElementById("profilePhoto").alt =
+    persona.nombre;
+
+document.getElementById("profileName").textContent =
+    persona.nombre;
+
+document.getElementById("profileRole").textContent =
+    persona.cargo;
 
 
 // TELÉFONO MÓVIL
 
-phoneValue.textContent = persona.telefono;
-phoneLink.href = "tel:" + persona.telefono;
+document.getElementById("phoneValue").textContent =
+    persona.telefono;
+
+document.getElementById("phoneLink").href =
+    "tel:" + persona.telefono;
 
 
 // TELÉFONO FIJO
 
-phoneFixedValue.textContent = persona.telefonoFijo;
-phoneFixedLink.href = "tel:" + persona.telefonoFijo;
+document.getElementById("phoneFixedValue").textContent =
+    persona.telefonoFijo;
+
+document.getElementById("phoneFixedLink").href =
+    "tel:" + persona.telefonoFijo;
 
 
 // EMAIL
 
-emailValue.textContent = persona.email;
-emailLink.href = "mailto:" + persona.email;
+document.getElementById("emailValue").textContent =
+    persona.email;
+
+document.getElementById("emailLink").href =
+    "mailto:" + persona.email;
 
 
 // UBICACIÓN
 
-locationValue.textContent = persona.ubicacion;
-locationLink.href = persona.mapa;
+document.getElementById("locationValue").textContent =
+    persona.ubicacion;
+
+document.getElementById("locationLink").href =
+    persona.mapa;
 
 
 // SITIO WEB
 
-websiteValue.textContent = persona.web;
-websiteLink.href = persona.web;
+document.getElementById("websiteValue").textContent =
+    persona.web;
+
+document.getElementById("websiteLink").href =
+    persona.web;
+
+/* =====================================================
+   GUARDAR CONTACTO
+   ===================================================== */
+
+
+function saveContact() {
+
+
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:${persona.nombre}
+ORG:AMANAOIL
+TITLE:${persona.cargo}
+TEL:${persona.telefono}
+EMAIL:${persona.email}
+URL:${persona.web}
+END:VCARD`;
+
+
+    const blob = new Blob(
+        [vcard],
+        {
+            type: "text/vcard;charset=utf-8"
+        }
+    );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        persona.nombre
+            .replaceAll(" ", "-")
+            .replaceAll(".", "")
+        + ".vcf";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
 
 
 /* =====================================================

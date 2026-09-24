@@ -443,12 +443,35 @@ const persona =
 
 
 
+const persona =
+    trabajadores[personaSolicitada];
+
+
+// PERFIL
+
+document.getElementById("profilePhoto").src =
+    "images/" + persona.foto;
+
+document.getElementById("profilePhoto").alt =
+    persona.nombre;
+
+document.getElementById("profileName").textContent =
+    persona.nombre;
+
+document.getElementById("profileRole").textContent =
+    persona.cargo;
+
+
+// TELÉFONO MÓVIL
+
 document.getElementById("phoneValue").textContent =
     persona.telefono;
 
 document.getElementById("phoneLink").href =
     "tel:" + persona.telefono;
 
+
+// TELÉFONO FIJO
 
 document.getElementById("phoneFixedValue").textContent =
     persona.telefonoFijo;
@@ -457,6 +480,8 @@ document.getElementById("phoneFixedLink").href =
     "tel:" + persona.telefonoFijo;
 
 
+// EMAIL
+
 document.getElementById("emailValue").textContent =
     persona.email;
 
@@ -464,12 +489,16 @@ document.getElementById("emailLink").href =
     "mailto:" + persona.email;
 
 
+// UBICACIÓN
+
 document.getElementById("locationValue").textContent =
     persona.ubicacion;
 
 document.getElementById("locationLink").href =
     persona.mapa;
 
+
+// SITIO WEB
 
 document.getElementById("websiteValue").textContent =
     persona.web;

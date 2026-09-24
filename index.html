@@ -443,73 +443,39 @@ const persona =
 
 
 
-/* =====================================================
-   SI LA PERSONA EXISTE, CARGAMOS SUS DATOS
-   ===================================================== */
+document.getElementById("phoneValue").textContent =
+    persona.telefono;
+
+document.getElementById("phoneLink").href =
+    "tel:" + persona.telefono;
 
 
-if (persona) {
+document.getElementById("phoneFixedValue").textContent =
+    persona.telefonoFijo;
+
+document.getElementById("phoneFixedLink").href =
+    "tel:" + persona.telefonoFijo;
 
 
-    document.title =
-        persona.nombre + " | AMANAOIL";
+document.getElementById("emailValue").textContent =
+    persona.email;
+
+document.getElementById("emailLink").href =
+    "mailto:" + persona.email;
 
 
-    document.getElementById("profileName").textContent =
-        persona.nombre;
+document.getElementById("locationValue").textContent =
+    persona.ubicacion;
+
+document.getElementById("locationLink").href =
+    persona.mapa;
 
 
-    document.getElementById("profileRole").textContent =
-        persona.cargo;
+document.getElementById("websiteValue").textContent =
+    persona.web;
 
-
-    document.getElementById("phoneValue").textContent =
-        persona.telefono;
-
-
-    document.getElementById("phoneLink").href =
-        "tel:" + persona.telefono;
-
-
-    document.getElementById("emailValue").textContent =
-        persona.email;
-
-
-    document.getElementById("emailLink").href =
-        "mailto:" + persona.email;
-
-
-    document.getElementById("locationValue").textContent =
-        persona.ubicacion;
-
-
-    document.getElementById("locationLink").href =
-        persona.mapa;
-
-
-    document.getElementById("websiteValue").textContent =
-        persona.web.replace("https://", "");
-
-
-    document.getElementById("websiteLink").href =
-        persona.web;
-
-
-    const foto =
-        document.getElementById("profilePhoto");
-
-
-    foto.src =
-        "images/" + persona.foto;
-
-
-    foto.alt =
-        persona.nombre;
-
-
-}
-
-
+document.getElementById("websiteLink").href =
+    persona.web;
 
 /* =====================================================
    GUARDAR CONTACTO

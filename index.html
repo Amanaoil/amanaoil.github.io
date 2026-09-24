@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+<meta
+    name="theme-color"
+    content="#000000"
+>
+    >
+
+    <meta
+        name="description"
+        content="Tarjeta digital corporativa AMANAOIL"
+    >
+
+    <title>AMANAOIL | Tarjeta Digital</title>
+
+<link
+    rel="stylesheet"
+    href="style.css?v=2"
+>
+
+</head>
+
+
+<body>
+
+    <main class="phone">
+
+
+        <!-- HEADER -->
+
+        <header class="top-bar">
+
+            <div class="brand">
+
+                <div class="brand-mark">
+                    A
+                </div>
+
+                AMANAOIL
+
+            </div>
+
+            <button
+                class="menu"
+                type="button"
+                onclick="shareCard()"
+                aria-label="Compartir tarjeta"
+            >
+                •••
+            </button>
+
+        </header>
+
+
+
+        <!-- PERFIL -->
+
+        <section class="profile">
+
+
+            <img
+                id="profilePhoto"
+                class="photo"
+                src=""
+                alt=""
+            >
+
+
+            <h1
+                id="profileName"
+                class="name"
+            >
+            </h1>
+
+
+            <p
+                id="profileRole"
+                class="role"
+            >
+            </p>
+
+
+            <p class="company">
+                AMANAOIL
+            </p>
+
+
+            <div class="actions">
+
+
+                <button
+                    class="primary-button"
+                    type="button"
+                    onclick="saveContact()"
+                >
+                    ＋ Guardar contacto
+                </button>
+
+
+                <button
+                    class="secondary-button"
+                    type="button"
+                    onclick="shareCard()"
+                >
+                    Compartir
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- CONTACTO -->
+
+        <section class="section">
+
+
+            <div class="section-title">
+                Contacto
+            </div>
+
+
+
+            <!-- TELÉFONO -->
+
+            <a
+                id="phoneLink"
+                class="contact-link"
+                href="#"
+            >
+
+                <div class="icon">
+                    ☎
+                </div>
+
+
+                <div class="link-info">
+
+                    <div class="link-title">
+                        Teléfono
+                    </div>
+
+                    <div
+                        id="phoneValue"
+                        class="link-value"
+                    >
+                    </div>
+
+                </div>
+
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </a>
+
+
+
+            <!-- EMAIL -->
+
+            <a
+                id="emailLink"
+                class="contact-link"
+                href="#"
+            >
+
+                <div class="icon">
+                    ✉
+                </div>
+
+
+                <div class="link-info">
+
+                    <div class="link-title">
+                        Email
+                    </div>
+
+                    <div
+                        id="emailValue"
+                        class="link-value"
+                    >
+                    </div>
+
+                </div>
+
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </a>
+
+
+
+            <!-- UBICACIÓN -->
+
+            <a
+                id="locationLink"
+                class="contact-link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="icon">
+                    ⌖
+                </div>
+
+
+                <div class="link-info">
+
+                    <div class="link-title">
+                        Ubicación
+                    </div>
+
+                    <div
+                        id="locationValue"
+                        class="link-value"
+                    >
+                    </div>
+
+                </div>
+
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </a>
+
+
+        </section>
+
+
+
+        <!-- EMPRESA -->
+
+        <section class="section">
+
+
+            <div class="section-title">
+                Empresa
+            </div>
+
+
+            <a
+                id="websiteLink"
+                class="contact-link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="icon">
+                    ◎
+                </div>
+
+
+                <div class="link-info">
+
+                    <div class="link-title">
+                        Sitio web
+                    </div>
+
+                    <div
+                        id="websiteValue"
+                        class="link-value"
+                    >
+                    </div>
+
+                </div>
+
+
+                <div class="arrow">
+                    ›
+                </div>
+
+            </a>
+
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            AMANAOIL · Tarjeta digital
+
+        </div>
+
+
+    </main>
+
+
+
+<script>
+
+
+/* =====================================================
+   INFORMACIÓN DE LOS TRABAJADORES
+   ===================================================== */
+
+
+const trabajadores = {
+
+
+    eduardo: {
+
+        nombre: "Eduardo Guzmán Hernández",
+
+        cargo: "Presidente · Chairman",
+
+        telefono: "+00 000 000 000",
+
+        email: "eduardo@amanaoil.com",
+
+        ubicacion: "Ubicación AMANAOIL",
+
+        mapa: "https://maps.google.com",
+
+        web: "https://amanaoil.com",
+
+        foto: "eduardo.jpg"
+
+    },
+
+
+    victor: {
+
+        nombre: "Víctor Gómez",
+
+        cargo: "Director de Planificación · CSO · Director General · CEO",
+
+        telefono: "+00 000 000 000",
+
+        email: "victor@amanaoil.com",
+
+        ubicacion: "Ubicación AMANAOIL",
+
+        mapa: "https://maps.google.com",
+
+        web: "https://amanaoil.com",
+
+        foto: "victor.jpg"
+
+    },
+
+
+    pedro: {
+
+        nombre: "Pedro E. Rojas Valdés",
+
+        cargo: "Director de Producción · COO",
+
+        telefono: "+00 000 000 000",
+
+        email: "pedro@amanaoil.com",
+
+        ubicacion: "Ubicación AMANAOIL",
+
+        mapa: "https://maps.google.com",
+
+        web: "https://amanaoil.com",
+
+        foto: "pedro.jpg"
+
+    },
+
+
+    omar: {
+
+        nombre: "Omar Guerra M.",
+
+        cargo: "Director Comercial · CCO",
+
+        telefono: "+00 000 000 000",
+
+        email: "omar@amanaoil.com",
+
+        ubicacion: "Ubicación AMANAOIL",
+
+        mapa: "https://maps.google.com",
+
+        web: "https://amanaoil.com",
+
+        foto: "omar.jpg"
+
+    },
+
+
+    rosmary: {
+
+        nombre: "Rosmary Guerra L.",
+
+        cargo: "Consultoría Jurídica · CLO",
+
+        telefono: "+00 000 000 000",
+
+        email: "rosmary@amanaoil.com",
+
+        ubicacion: "Ubicación AMANAOIL",
+
+        mapa: "https://maps.google.com",
+
+        web: "https://amanaoil.com",
+
+        foto: "rosmary.jpg"
+
+    }
+
+
+};
+
+
+
+/* =====================================================
+   DETECTAR QUÉ PERSONA ESTÁ EN LA URL
+   ===================================================== */
+
+
+const parametros = new URLSearchParams(
+    window.location.search
+);
+
+
+const personaSolicitada =
+    parametros.get("persona") || "eduardo";
+
+
+const persona =
+    trabajadores[personaSolicitada];
+
+
+
+/* =====================================================
+   SI LA PERSONA EXISTE, CARGAMOS SUS DATOS
+   ===================================================== */
+
+
+if (persona) {
+
+
+    document.title =
+        persona.nombre + " | AMANAOIL";
+
+
+    document.getElementById("profileName").textContent =
+        persona.nombre;
+
+
+    document.getElementById("profileRole").textContent =
+        persona.cargo;
+
+
+    document.getElementById("phoneValue").textContent =
+        persona.telefono;
+
+
+    document.getElementById("phoneLink").href =
+        "tel:" + persona.telefono;
+
+
+    document.getElementById("emailValue").textContent =
+        persona.email;
+
+
+    document.getElementById("emailLink").href =
+        "mailto:" + persona.email;
+
+
+    document.getElementById("locationValue").textContent =
+        persona.ubicacion;
+
+
+    document.getElementById("locationLink").href =
+        persona.mapa;
+
+
+    document.getElementById("websiteValue").textContent =
+        persona.web.replace("https://", "");
+
+
+    document.getElementById("websiteLink").href =
+        persona.web;
+
+
+    const foto =
+        document.getElementById("profilePhoto");
+
+
+    foto.src =
+        "images/" + persona.foto;
+
+
+    foto.alt =
+        persona.nombre;
+
+
+}
+
+
+
+/* =====================================================
+   GUARDAR CONTACTO
+   ===================================================== */
+
+
+function saveContact() {
+
+
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:${persona.nombre}
+ORG:AMANAOIL
+TITLE:${persona.cargo}
+TEL:${persona.telefono}
+EMAIL:${persona.email}
+URL:${persona.web}
+END:VCARD`;
+
+
+    const blob = new Blob(
+        [vcard],
+        {
+            type: "text/vcard;charset=utf-8"
+        }
+    );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        persona.nombre
+            .replaceAll(" ", "-")
+            .replaceAll(".", "")
+        + ".vcf";
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+
+/* =====================================================
+   COMPARTIR TARJETA
+   ===================================================== */
+
+
+async function shareCard() {
+
+
+    if (navigator.share) {
+
+
+        await navigator.share({
+
+            title:
+                persona.nombre +
+                " | AMANAOIL",
+
+            text:
+                "Tarjeta digital de " +
+                persona.nombre,
+
+            url:
+                window.location.href
+
+        });
+
+
+    } else {
+
+
+        await navigator.clipboard.writeText(
+            window.location.href
+        );
+
+
+        alert(
+            "Enlace de la tarjeta copiado."
+        );
+
+    }
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

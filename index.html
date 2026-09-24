@@ -467,12 +467,20 @@ if (persona) {
         persona.telefono;
 
 
-    document.getElementById("phoneLink").href =
-        "tel:" + persona.telefono;
+   document.getElementById("phoneLink").href =
+    "tel:" + persona.telefono;
 
 
-    document.getElementById("emailValue").textContent =
-        persona.email;
+document.getElementById("phoneFixedValue").textContent =
+    persona.telefonoFijo;
+
+
+document.getElementById("phoneFixedLink").href =
+    "tel:" + persona.telefonoFijo;
+
+
+document.getElementById("emailValue").textContent =
+    persona.email;
 
 
     document.getElementById("emailLink").href =
